@@ -6,8 +6,8 @@
   * The last parameter accepts a callback 
   * In the body of the function return the callback with the two parameters that you created
 */
-function consume(a, b, callback){ 
-  return callback = a, b;
+function consume(a, b, cb) { 
+  return cb(a, b);
   
   } 
 
@@ -17,30 +17,20 @@ function consume(a, b, callback){
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
-function add(a, b){
-  return consume(a + b);
+function add(x, y){
+ return x + y
+
 }
 
 
 
-// add(consume, function(adding){
-//   console.log(add);
-// }) 
-  
-
-
-
-// add(consume, function(consume){
-//   console.log(consume);
-// })
-
-function multiply(x, y, consume){
-  return consume(x * y);
+function multiply(x, y){
+  return x * y;
 }
 
 
-function greeting(firstName, lastName, consume){
-  return(`Hello ${consume(firstName, lastName)}, nice to meet you!}`);
+function greeting(firstName, lastName){
+  return `Hello ${firstName} ${lastName}, nice to meet you!`;
 }
 
 
@@ -57,6 +47,7 @@ function greeting(firstName, lastName, consume){
 
 // Explanation: 
 
+//closures its when a method has to go outside of the local scope to the global scope to look for whats been asked. 
 
 const external = "I'm outside the function";
 

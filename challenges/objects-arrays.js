@@ -106,7 +106,7 @@ console.log(contactInfo);
 const uni = []
 
 for (let i = 0; i < graduates.length; i++){
-  if (graduates[i].university.includes("uni")){      /////////////////////////////////check again/////////////////////////
+  if (graduates[i].university.indexOf("uni")){      /////////////////////////////////check again/////////////////////////
     uni.push(graduates[i].university);
 
   }
@@ -133,13 +133,13 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 /* Request 1: .forEach()
 
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
-
 */
+
 const animalNames = [];
 
-zooAnimals.forEach(animalName => animalNames.push(`Name: ${zooAnimals.animal_name}, scientific: ${zooAnimals.scientific_name}`));  ///////////////////////////////////////////
+  zooAnimals.forEach( animal => animalNames.push(`Name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));  
 
-console.log(animalNames);
+ console.log(animalNames);
 
 /* Request 2: .map()    
 
@@ -148,12 +148,12 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 //const lowerCase = [];
-// const lowerCase = animalNames.map( function(animalNames){
-//   return animalNames.animalName.toUpperCase()
-// });
+const lowerCase = animalNames.map( function(animal_name){
+  return animal_name.toLowerCase()
+});
 
 
-//console.log(lowerCase); 
+console.log(lowerCase); 
 
 /* Request 3: .filter() 
 
